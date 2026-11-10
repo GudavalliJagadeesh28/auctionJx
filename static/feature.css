@@ -1,0 +1,197 @@
+.intro {
+  position: relative;
+  isolation: isolate;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 auto;
+  width: 62%;
+  background-image:
+    linear-gradient(90deg, var(--bg) 0%, rgba(16, 24, 19, .8) 28%, rgba(16, 24, 19, .12) 100%),
+    linear-gradient(0deg, var(--bg), transparent 38%),
+    url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1400&q=80");
+  background-position: center, center, center 45%;
+  background-size: cover;
+  border-radius: 4px;
+  opacity: .92;
+}
+
+@media (max-width: 650px) {
+  .intro {
+    min-height: 220px;
+  }
+
+  .intro::after {
+    right: -17px;
+    width: 80%;
+    opacity: .62;
+  }
+}
+
+.visibility-label {
+  margin-top: 15px;
+}
+
+.create-panel select.text-input,
+.host-visibility-label select {
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.public-rooms {
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 21px 0 6px;
+}
+
+.public-rooms-heading,
+.public-room-actions,
+.public-room {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.public-rooms-heading h2 {
+  font-size: 19px;
+  margin: 8px 0 15px;
+}
+
+.public-room-actions {
+  margin-bottom: 13px;
+}
+
+.refresh-button,
+.public-join,
+.host-controls .button {
+  min-height: 36px;
+  font-size: 10px;
+}
+
+.public-room-list {
+  border-top: 1px solid var(--line);
+}
+
+.public-room {
+  min-height: 70px;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.public-room:last-child {
+  border-bottom: 0;
+}
+
+.public-room-info {
+  min-width: 0;
+}
+
+.public-room-info h3 {
+  font-size: 12px;
+  margin: 0 0 4px;
+}
+
+.public-room-info p,
+.public-room-code {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.public-room-code {
+  display: inline-block;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.public-join {
+  flex: 0 0 auto;
+}
+
+.host-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: end;
+  gap: 8px;
+}
+
+.host-visibility-label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .7px;
+}
+
+.host-visibility-label select {
+  width: 118px;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.visibility-badge {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--green);
+  padding: 5px 7px;
+  font-size: 8px;
+}
+
+.paused-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 26px auto -25px;
+  color: var(--green);
+  text-align: center;
+}
+
+.paused-banner strong {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.paused-banner span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .public-rooms {
+    margin-top: 25px;
+  }
+
+  .public-room {
+    align-items: flex-start;
+  }
+
+  .public-room-actions {
+    gap: 8px;
+  }
+
+  .host-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .paused-banner {
+    margin-top: 18px;
+    margin-bottom: -20px;
+  }
+}
